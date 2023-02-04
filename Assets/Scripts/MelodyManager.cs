@@ -6,6 +6,9 @@ public class MelodyManager : MonoBehaviour {
 
     public int[] melody;
     public NoteSpot[] notesLineRef;
+    [Tooltip("Space_between_steps * 60 / bpm")]
+    public float cursorHorizontalSpeed = 2f;
+    public float cursorVerticalSpeed = 10f;
 
     int currentNote;
     Cursor cursor;
@@ -21,6 +24,8 @@ public class MelodyManager : MonoBehaviour {
                 ") and its reference line (" + notesLineRef.Length + ")");
         }
         cursor = FindObjectOfType<Cursor>();
+        cursor.horizontalSpeed = cursorHorizontalSpeed;
+        cursor.verticalSpeed = cursorVerticalSpeed;
 
         // Find what notes are in each column
         notesPerColumn = new List<List<NoteSpot>>();

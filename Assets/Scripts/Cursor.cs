@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Cursor : MonoBehaviour {
 
-    public float horizontalSpeed = 2f;
-    public float verticalSpeed = 4f;
+    [HideInInspector] public float horizontalSpeed = 2f;
+    [HideInInspector] public float verticalSpeed = 4f;
 
     Rigidbody2D rb;
     float moveInput;
