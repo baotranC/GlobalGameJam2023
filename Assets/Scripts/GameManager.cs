@@ -35,4 +35,8 @@ public class GameManager : MonoBehaviour {
         print("Last level complete, go to ending of the game");
     }
 
+    public void ResetCursor() {
+        levels[currentLevel].ResetCursor();
+    }
+
 }

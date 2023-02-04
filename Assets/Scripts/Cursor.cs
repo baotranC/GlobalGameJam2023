@@ -11,11 +11,11 @@ public class Cursor : MonoBehaviour {
     Rigidbody2D rb;
     float moveInput;
     Vector3 initialPos;
-    MelodyManager melodyManager;
+    GameManager gameManager;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
-        melodyManager = FindObjectOfType<MelodyManager>();
+        gameManager = FindObjectOfType<GameManager>();
         initialPos = transform.position;
     }
 
@@ -30,7 +30,7 @@ public class Cursor : MonoBehaviour {
 
     public void PlayInput(InputAction.CallbackContext context) {
         if(context.started) {
-            melodyManager.StartPlay();
+            Play();
         }
     }
 

@@ -68,10 +68,6 @@ public class MelodyManager : MonoBehaviour {
         }
     }
 
-    public void StartPlay() {
-        cursor.Play();
-    }
-
     public void RegisterNote(NoteSpot noteSpot) {
         int noteIndex = noteSpot.GetNoteIndex();
 
@@ -101,6 +97,11 @@ public class MelodyManager : MonoBehaviour {
 
     void EndMelody() {
         print(gameObject.name + " succeeded !");
+        StartCoroutine(PerformEndMelody());
+    }
+
+    IEnumerator PerformEndMelody() {
+        yield return new WaitForSeconds(1f);
         GetComponentInParent<LevelManager>().GoToNextMelody();
     }
 
