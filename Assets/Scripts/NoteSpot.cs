@@ -19,9 +19,6 @@ public class NoteSpot : MonoBehaviour {
     Vector3 initalPos;
     [HideInInspector] public int column;
     [HideInInspector] public bool reference;
-
-    private float dec = 0.0001f;
-
     public void Init() {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -46,7 +43,7 @@ public class NoteSpot : MonoBehaviour {
     public void Hide(bool hideSprite) {
         if (hideSprite) {
             Color hiddenColor = sprite.color;
-            hiddenColor.a = 0.5f;
+            hiddenColor.a = 0.2f;
             sprite.color = hiddenColor;
         }
         isHidden = true;
