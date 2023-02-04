@@ -5,30 +5,30 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public int[] melody;
-    public NoteSpot[] notesColumn1;
-    public NoteSpot[] notesColumn2;
-    public NoteSpot[] notesColumn3;
-    public NoteSpot[] notesColumn4;
-    public NoteSpot[] notesColumn5;
-    public NoteSpot[] notesColumn6;
     public NoteSpot[] notesLineRef;
 
     int currentNote;
     Cursor cursor;
     bool hasFailed;
-    List<NoteSpot[]> notesPerColumn;
+    List<List<NoteSpot>> notesPerColumn;
 
 
     private void Awake() {
         cursor = FindObjectOfType<Cursor>();
 
-        notesPerColumn = new List<NoteSpot[]>();
-        notesPerColumn.Add(notesColumn1);
-        notesPerColumn.Add(notesColumn2);
-        notesPerColumn.Add(notesColumn3);
-        notesPerColumn.Add(notesColumn4);
-        notesPerColumn.Add(notesColumn5);
-        notesPerColumn.Add(notesColumn6);
+        notesPerColumn = new List<List<NoteSpot>>();
+
+        for (int i = 0; i < notesLineRef.Length; ++i) {
+            List<NoteSpot> columnNotes = new List<NoteSpot>();
+            RaycastHit2D[] hits = Physics2D.RaycastAll(notesLineRef[i].transform.position, Vector2.down);
+            foreach (RaycastHit2D hit in hits) {
+                NoteSpot noteSpot = hit.collider.gameObject.GetComponent<NoteSpot>();
+                if (noteSpot != null) {
+                    columnNotes.Add(noteSpot);
+                }
+            }
+            notesPerColumn.Add(columnNotes);
+        }
 
         for (int i=0; i<notesPerColumn.Count; ++i) {
             foreach(NoteSpot noteSpot in notesPerColumn[i]) {
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         for (int i = 0; i < melody.Length; ++i) {
-            notesPerColumn[i][Random.Range(0, notesPerColumn[i].Length)].SetNoteIndex(melody[i]);
+            notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)].SetNoteIndex(melody[i]);
             notesLineRef[i].SetNoteIndex(melody[i]);
         }
     }
