@@ -2,58 +2,102 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteSpot : MonoBehaviour {
+public class NoteSpot : MonoBehaviour
+{
+	[SerializeField] private AudioClip[] notes;
+	[SerializeField] private Color[] noteColors;
 
-    public AudioClip[] notes;
-    public Color[] noteColors;
+	[SerializeField] private bool isMovingVertical;
+	[SerializeField] private bool isMovingHorizontal;
+	[SerializeField] private float speedMov = 2f;
+	[SerializeField] private float heightMov = 0.005f;
 
-    AudioSource source;
-    SpriteRenderer sprite;
-    GameManager gameManager;
-    int noteIndex;
-    bool isHidden;
-    [HideInInspector] public int column;
-    
-    void Awake() {
-        source = GetComponent<AudioSource>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-        gameManager = FindObjectOfType<GameManager>();
+	private AudioSource source;
+	private SpriteRenderer sprite;
+	private GameManager gameManager;
+	int noteIndex;
+	bool isHidden;
+	Vector3 initalPos;
+	[HideInInspector] public int column;
+	[HideInInspector] public bool reference;
 
-        SetNoteIndex(Random.Range(0, notes.Length));
-    }
+	private float dec = 0.0001f;
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(!isHidden && collision.CompareTag("Cursor")) {
-            Play();
-            gameManager.RegisterNote(this);
-        }
-    }
+	void Awake()
+	{
+		source = GetComponent<AudioSource>();
+		sprite = GetComponentInChildren<SpriteRenderer>();
+		gameManager = FindObjectOfType<GameManager>();
 
-    void Play() {
-        source.clip = notes[noteIndex];
-        source.Play();
-    }
+		SetNoteIndex(Random.Range(0, notes.Length));
+		initalPos = transform.position;
+	}
 
-    public void Hide() {
-        Color hiddenColor = sprite.color;
-        hiddenColor.a = 0.5f;
-        sprite.color = hiddenColor;
-        isHidden = true;
-    }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (!isHidden && collision.CompareTag("Cursor"))
+		{
+			Play();
+			gameManager.RegisterNote(this);
+		}
+	}
 
-    public void Show() {
-        Color normalColor = sprite.color;
-        normalColor.a = 1f;
-        sprite.color = normalColor;
-        isHidden = false;
-    }
+	void Play()
+	{
+		source.clip = notes[noteIndex];
+		source.Play();
+	}
 
-    public void SetNoteIndex(int value) {
-        noteIndex = value;
-        sprite.color = noteColors[noteIndex];
-    }
+	public void Hide()
+	{
+		Color hiddenColor = sprite.color;
+		hiddenColor.a = 0.5f;
+		sprite.color = hiddenColor;
+		isHidden = true;
+	}
 
-    public int GetNoteIndex() {
-        return noteIndex;
-    }
+	public void Show()
+	{
+		Color normalColor = sprite.color;
+		normalColor.a = 1f;
+		sprite.color = normalColor;
+		isHidden = false;
+	}
+
+	public void SetNoteIndex(int value)
+	{
+		noteIndex = value;
+		sprite.color = noteColors[noteIndex];
+	}
+
+	public int GetNoteIndex()
+	{
+		return noteIndex;
+	}
+
+	private void Update()
+	{
+		if (!reference)
+		{
+			Vector3 pos = transform.position;
+			float newY = initalPos.y;
+			float newX = initalPos.x;
+
+			if (isMovingVertical)
+			{
+				newY = (Mathf.Sin(Time.time * speedMov) * heightMov) + pos.y;
+			}
+			if (isMovingHorizontal)
+			{
+				newX = (Mathf.Sin(Time.time * speedMov) * heightMov) + pos.x;
+			}
+
+			transform.position = new Vector3(newX, newY, pos.z);
+		}
+	}
+
+	private Vector3 RandomizePosition(float minX, float maxX, float minY, float maxY, float Z)
+	{
+		return new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Z);
+	}
 }

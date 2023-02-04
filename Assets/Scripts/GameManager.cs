@@ -30,21 +30,23 @@ public class GameManager : MonoBehaviour {
             notesPerColumn.Add(columnNotes);
         }
 
-        for (int i=0; i<notesPerColumn.Count; ++i) {
-            print("Column " + i.ToString() + " :");
-            foreach(NoteSpot noteSpot in notesPerColumn[i]) {
+        for (int i = 0; i < notesPerColumn.Count; ++i) {
+            foreach (NoteSpot noteSpot in notesPerColumn[i]) {
                 noteSpot.column = i;
-                print(noteSpot.gameObject.name + " " + noteSpot.transform.position.ToString());
             }
         }
     }
 
     private void Start() {
         for (int i = 0; i < melody.Length; ++i) {
-            NoteSpot noteSpot = notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)];
-            print(noteSpot.name + " " + noteSpot.transform.position.ToString());
-            noteSpot.SetNoteIndex(melody[i]);
+            print(i.ToString() + " " + notesPerColumn[i].Count.ToString());
+            print("   " + melody[i].ToString() + " " + notesLineRef[i].ToString());
+            notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)].SetNoteIndex(melody[i]);
+            print("a");
             notesLineRef[i].SetNoteIndex(melody[i]);
+            print("b");
+            notesLineRef[i].reference = true;
+            print("c");
         }
     }
 
@@ -66,24 +68,24 @@ public class GameManager : MonoBehaviour {
     public void RegisterNote(NoteSpot noteSpot) {
         int noteIndex = noteSpot.GetNoteIndex();
 
-        if(melody[currentNote] == noteIndex) {
+        if (melody[currentNote] == noteIndex) {
             print("Note is valid (" + (currentNote + 1) + "/" + melody.Length + ")");
         } else {
             print("Wrong note !  (" + (currentNote + 1) + "/" + melody.Length + ")");
             hasFailed = true;
         }
-        
+
         currentNote++;
 
-        if(currentNote == melody.Length) {
-            if(hasFailed) {
+        if (currentNote == melody.Length) {
+            if (hasFailed) {
                 print("Melody failed");
             } else {
                 print("Melody succeeded !");
             }
         }
 
-        foreach(NoteSpot noteSpot1 in notesPerColumn[noteSpot.column]) {
+        foreach (NoteSpot noteSpot1 in notesPerColumn[noteSpot.column]) {
             if (noteSpot1 != noteSpot) {
                 noteSpot1.Hide();
             }
