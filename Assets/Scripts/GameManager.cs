@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
             RaycastHit2D[] hits = Physics2D.RaycastAll(notesLineRef[i].transform.position, Vector2.down);
             foreach (RaycastHit2D hit in hits) {
                 NoteSpot noteSpot = hit.collider.gameObject.GetComponent<NoteSpot>();
-                if (noteSpot != null) {
+                if (noteSpot != null && noteSpot != notesLineRef[i]) {
                     columnNotes.Add(noteSpot);
                 }
             }
@@ -31,15 +31,19 @@ public class GameManager : MonoBehaviour {
         }
 
         for (int i=0; i<notesPerColumn.Count; ++i) {
+            print("Column " + i.ToString() + " :");
             foreach(NoteSpot noteSpot in notesPerColumn[i]) {
                 noteSpot.column = i;
+                print(noteSpot.gameObject.name + " " + noteSpot.transform.position.ToString());
             }
         }
     }
 
     private void Start() {
         for (int i = 0; i < melody.Length; ++i) {
-            notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)].SetNoteIndex(melody[i]);
+            NoteSpot noteSpot = notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)];
+            print(noteSpot.name + " " + noteSpot.transform.position.ToString());
+            noteSpot.SetNoteIndex(melody[i]);
             notesLineRef[i].SetNoteIndex(melody[i]);
         }
     }
