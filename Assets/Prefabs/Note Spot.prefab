@@ -144,8 +144,11 @@ MonoBehaviour:
   isMovingHorizontal: 0
   speedMov: 2
   heightMov: 0.005
+  isAlternateColor: 0
+  alternateColorDelay: 1
+  isCurrentColorNote: 0
   column: 0
-  reference: 0
+  isReferenceNote: 0
 --- !u!61 &4316337408546450691
 BoxCollider2D:
   m_ObjectHideFlags: 0
