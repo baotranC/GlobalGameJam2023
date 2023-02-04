@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
         levels[currentLevel].gameObject.SetActive(true);
         levels[currentLevel].StartLevel();
+        ResetCursor();
     }
 
     void GoToEnding() {

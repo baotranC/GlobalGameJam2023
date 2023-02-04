@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
+    public AudioClip concertAudio;
+
     MelodyManager[] melodies;
     int currentMelody;
+    AudioSource concertSource;
 
     public void StartLevel() {
         print("Start of " + gameObject.name);
         melodies = GetComponentsInChildren<MelodyManager>();
+        concertSource = GetComponent<AudioSource>();
 
         foreach (MelodyManager melody in melodies) {
             melody.gameObject.SetActive(false);
@@ -34,11 +38,26 @@ public class LevelManager : MonoBehaviour {
 
     public void EndLevel() {
         print("End of " + gameObject.name);
+        StartCoroutine(PerformEndLevel());
+    }
+
+    IEnumerator PerformEndLevel() {
+        melodies[currentMelody - 1].gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        concertSource.clip = concertAudio;
+        concertSource.Play();
+
+        yield return new WaitForSeconds(concertAudio.length + 1f);
+
         GetComponentInParent<GameManager>().GoToNextLevel();
     }
 
     public void ResetCursor() {
-        melodies[currentMelody].ResetCursor();
+        if (currentMelody < melodies.Length) {
+            melodies[currentMelody].ResetCursor();
+        }
     }
 
 }

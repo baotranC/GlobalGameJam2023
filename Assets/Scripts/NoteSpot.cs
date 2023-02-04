@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteSpot : MonoBehaviour {
+
     [SerializeField] private AudioClip[] notes;
     [SerializeField] private Color[] noteColors;
 
@@ -12,7 +13,7 @@ public class NoteSpot : MonoBehaviour {
     [SerializeField] private float heightMov = 0.005f;
 
     private AudioSource source;
-    private SpriteRenderer sprite;
+    [HideInInspector] public SpriteRenderer sprite;
     private MelodyManager melodyManager;
     int noteIndex;
     bool isHidden;
@@ -54,6 +55,7 @@ public class NoteSpot : MonoBehaviour {
         normalColor.a = 1f;
         sprite.color = normalColor;
         isHidden = false;
+        SetNoteIndex(noteIndex);
     }
 
     public void SetNoteIndex(int value) {

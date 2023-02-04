@@ -2788,6 +2788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 467192049}
     m_Modifications:
+    - target: {fileID: 5279355918202611398, guid: 8ee00a6fd2babd2428c1f175fb2706e5, type: 3}
+      propertyPath: concertAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 332b3159efd218b47abd6f506ec6d2fe, type: 3}
     - target: {fileID: 5279355918202611400, guid: 8ee00a6fd2babd2428c1f175fb2706e5, type: 3}
       propertyPath: m_Name
       value: Level (1)
