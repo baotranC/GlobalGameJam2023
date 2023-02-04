@@ -37,4 +37,8 @@ public class LevelManager : MonoBehaviour {
         GetComponentInParent<GameManager>().GoToNextLevel();
     }
 
+    public void ResetCursor() {
+        melodies[currentMelody].ResetCursor();
+    }
+
 }
