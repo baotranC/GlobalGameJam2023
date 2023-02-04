@@ -39,14 +39,9 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         for (int i = 0; i < melody.Length; ++i) {
-            print(i.ToString() + " " + notesPerColumn[i].Count.ToString());
-            print("   " + melody[i].ToString() + " " + notesLineRef[i].ToString());
             notesPerColumn[i][Random.Range(0, notesPerColumn[i].Count)].SetNoteIndex(melody[i]);
-            print("a");
             notesLineRef[i].SetNoteIndex(melody[i]);
-            print("b");
             notesLineRef[i].reference = true;
-            print("c");
         }
     }
 
