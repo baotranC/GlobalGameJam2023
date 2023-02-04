@@ -43,10 +43,12 @@ public class NoteSpot : MonoBehaviour {
         source.Play();
     }
 
-    public void Hide() {
-        Color hiddenColor = sprite.color;
-        hiddenColor.a = 0.5f;
-        sprite.color = hiddenColor;
+    public void Hide(bool hideSprite) {
+        if (hideSprite) {
+            Color hiddenColor = sprite.color;
+            hiddenColor.a = 0.5f;
+            sprite.color = hiddenColor;
+        }
         isHidden = true;
     }
 

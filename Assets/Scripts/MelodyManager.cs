@@ -89,9 +89,7 @@ public class MelodyManager : MonoBehaviour {
         }
 
         foreach (NoteSpot noteSpot1 in notesPerColumn[noteSpot.column]) {
-            if (noteSpot1 != noteSpot) {
-                noteSpot1.Hide();
-            }
+            noteSpot1.Hide(hideSprite:(noteSpot1 != noteSpot));
         }
     }
 
