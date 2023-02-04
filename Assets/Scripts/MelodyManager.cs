@@ -122,7 +122,7 @@ public class MelodyManager : MonoBehaviour
 
 	public void DisplayFailedRow(int currentNote)
 	{
-		for (int i = 0; i < notesPerColumn[0].Count; ++i)
+		for (int i = 0; i < notesPerColumn[currentNote].Count; ++i)
 		{
 			notesPerColumn[currentNote][i].SetNoteIndex(5); // TODO: make this a constant
 		}
