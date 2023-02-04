@@ -140,6 +140,12 @@ MonoBehaviour:
   - {r: 1, g: 0.8454825, b: 0, a: 1}
   - {r: 0.16542071, g: 0.8773585, b: 0, a: 1}
   - {r: 0, g: 0.60645056, b: 1, a: 1}
+  isMovingVertical: 0
+  isMovingHorizontal: 0
+  speedMov: 2
+  heightMov: 0.005
+  column: 0
+  reference: 0
 --- !u!61 &4316337408546450691
 BoxCollider2D:
   m_ObjectHideFlags: 0
