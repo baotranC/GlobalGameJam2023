@@ -10,6 +10,8 @@ public class MelodyManager : MonoBehaviour {
     public float cursorHorizontalSpeed = 2f;
     public float cursorVerticalSpeed = 10f;
     public bool hasDarkness;
+    [SerializeField] private AudioClip[] errorSounds;
+    [SerializeField] private AudioSource errorSource;
 
     int currentNote;
     Cursor cursor;
@@ -103,6 +105,7 @@ public class MelodyManager : MonoBehaviour {
             hasFailed = true;
             DisplayFailedRow(noteSpot.column);
             shake.StartShake();
+            soundManager.PlaySound(errorSource, errorSounds, randomPitch: true, createTempSource: true);
         }
 
         currentNote++;
@@ -125,7 +128,14 @@ public class MelodyManager : MonoBehaviour {
         for (int i = 0; i < notesPerColumn[currentNote].Count; ++i) {
             notesPerColumn[currentNote][i].sprite.color = Color.black;
             notesPerColumn[currentNote][i].animator.SetBool("Error",true);
+        }
+    }
 
+    public void ConcertMode() {
+        for (int i = 0; i < notesPerColumn.Count; ++i) {
+            foreach (NoteSpot noteSpot in notesPerColumn[i]) {
+                noteSpot.ConcertMode();
+            }
         }
     }
 
