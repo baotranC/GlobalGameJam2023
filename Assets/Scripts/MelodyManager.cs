@@ -127,7 +127,14 @@ public class MelodyManager : MonoBehaviour {
         for (int i = 0; i < notesPerColumn[currentNote].Count; ++i) {
             notesPerColumn[currentNote][i].sprite.color = Color.black;
             notesPerColumn[currentNote][i].animator.SetBool("Error",true);
+        }
+    }
 
+    public void ConcertMode() {
+        for (int i = 0; i < notesPerColumn.Count; ++i) {
+            foreach (NoteSpot noteSpot in notesPerColumn[i]) {
+                noteSpot.ConcertMode();
+            }
         }
     }
 

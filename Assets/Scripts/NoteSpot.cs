@@ -43,7 +43,7 @@ public class NoteSpot : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (!isHidden && collision.CompareTag("Cursor")) {
             Play();
-            animator.SetBool("Interacted",true);
+            animator.SetBool("Interacted", true);
             melodyManager.RegisterNote(this);
         }
     }
@@ -65,12 +65,17 @@ public class NoteSpot : MonoBehaviour {
     public void Show() {
         Color normalColor = sprite.color;
         normalColor.a = 1f;
-        sprite.material.SetColor("OverlayCol",normalColor);
+        sprite.material.SetColor("OverlayCol", normalColor);
         light.color = normalColor;
         animator.SetBool("Interacted", false);
 
         isHidden = false;
         SetNoteIndex(noteIndex);
+    }
+
+    public void ConcertMode() {
+        Show();
+        animator.SetBool("Interacted", true);
     }
 
     public void SetNoteIndex(int value) {

@@ -71,17 +71,16 @@ public class LevelManager : MonoBehaviour {
 
         yield return new WaitForSeconds(2.3f);
 
-        foreach (GameObject go in desactivables) 
-        {
+        foreach (GameObject go in desactivables) {
             go.active = !go.active;
         };
+        melodies[currentMelody - 1].ConcertMode();
+
         // Play concert music
-        if (profile.TryGet<ChromaticAberration>(out aberration)) 
-        {
+        if (profile.TryGet<ChromaticAberration>(out aberration)) {
             aberration.active = true;
         }
-        if (profile.TryGet<Vignette>(out vignette))
-        {
+        if (profile.TryGet<Vignette>(out vignette)) {
             vignette.active = true;
         }
         light.intensity = .2f;
@@ -93,24 +92,21 @@ public class LevelManager : MonoBehaviour {
         concertSource.Play();
         // TODO setup all effects
 
-        yield return new WaitForSeconds(concertAudio.length );
+        yield return new WaitForSeconds(concertAudio.length);
 
         director.Play();
 
         yield return new WaitForSeconds(2.3f);
 
         light.intensity = .8f;
-        if (profile.TryGet<ChromaticAberration>(out aberration))
-        {
+        if (profile.TryGet<ChromaticAberration>(out aberration)) {
             aberration.active = false;
         }
-        if (profile.TryGet<Vignette>(out vignette))
-        {
+        if (profile.TryGet<Vignette>(out vignette)) {
             vignette.active = false;
         }
 
-        foreach (GameObject go in desactivables)
-        {
+        foreach (GameObject go in desactivables) {
             go.active = !go.active;
         };
         // TODO remove all effects
