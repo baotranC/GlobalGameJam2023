@@ -123,6 +123,8 @@ public class MelodyManager : MonoBehaviour {
     public void DisplayFailedRow(int currentNote) {
         for (int i = 0; i < notesPerColumn[currentNote].Count; ++i) {
             notesPerColumn[currentNote][i].sprite.color = Color.black;
+            notesPerColumn[currentNote][i].animator.SetBool("Error",true);
+
         }
     }
 
