@@ -110,6 +110,8 @@ public class LevelManager : MonoBehaviour {
             go.active = !go.active;
         };
         // TODO remove all effects
+
+        yield return new WaitForSeconds(0.5f);
         GetComponentInParent<GameManager>().GoToNextLevel();
     }
 
