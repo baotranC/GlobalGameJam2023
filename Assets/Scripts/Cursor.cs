@@ -9,6 +9,7 @@ public class Cursor : MonoBehaviour
 	public GameObject[] darkness;
 
 	Rigidbody2D rb;
+	public TrailRenderer tr;
 	float moveInput;
 	Vector3 initialPos;
 	[HideInInspector] public float horizontalSpeed = 2f;
@@ -24,7 +25,8 @@ public class Cursor : MonoBehaviour
 	public void Reset()
 	{
 		transform.position = initialPos;
-		rb.velocity = Vector2.zero;
+		tr.Clear();
+        rb.velocity = Vector2.zero;
 	}
 
 	public void Play()
