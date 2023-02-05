@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cursor
   - GlobalLight
+  - Desactivable
   layers:
   - Default
   - TransparentFX

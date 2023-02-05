@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     LevelManager[] levels;
+    public GameObject[] desactivables;
+
     int currentLevel;
 
     private void Awake() {
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour {
 
         foreach(LevelManager level in levels) {
             level.gameObject.SetActive(false);
+            level.desactivables = this.desactivables;
         }
 
         levels[0].gameObject.SetActive(true);

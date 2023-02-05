@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class LevelManager : MonoBehaviour {
 
@@ -10,6 +13,14 @@ public class LevelManager : MonoBehaviour {
     MelodyManager[] melodies;
     int currentMelody;
     AudioSource concertSource;
+
+    [SerializeField] private VolumeProfile profile;
+    [HideInInspector] private ChromaticAberration aberration;
+    [HideInInspector] private Vignette vignette;
+
+    [HideInInspector] private Light2D light;
+    [HideInInspector] public GameObject[] desactivables;
+
 
     public void StartLevel() {
         print("Start of " + gameObject.name);
@@ -49,13 +60,42 @@ public class LevelManager : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
+        light = GameObject.FindGameObjectsWithTag("GlobalLight")[0].GetComponent<Light2D>();
+
+        foreach(GameObject go in desactivables) 
+        {
+            go.active = true;
+        };
         // Play concert music
+        if (profile.TryGet<ChromaticAberration>(out aberration)) 
+        {
+            aberration.active = true;
+        }
+        if (profile.TryGet<Vignette>(out vignette))
+        {
+            vignette.active = true;
+        }
+        light.intensity = .2f;
         concertSource.clip = concertAudio;
         concertSource.Play();
         // TODO setup all effects
 
         yield return new WaitForSeconds(concertAudio.length + 1f);
 
+        light.intensity = .8f;
+        if (profile.TryGet<ChromaticAberration>(out aberration))
+        {
+            aberration.active = false;
+        }
+        if (profile.TryGet<Vignette>(out vignette))
+        {
+            vignette.active = false;
+        }
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Desactivable"))
+        {
+            go.active = false;
+        };
         // TODO remove all effects
         GetComponentInParent<GameManager>().GoToNextLevel();
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145518,6 +145518,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2118072187119168299, guid: d94747d1560f1be499011784fc653c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118072187119168299, guid: d94747d1560f1be499011784fc653c0f, type: 3}
+      propertyPath: m_TagString
+      value: Desactivable
+      objectReference: {fileID: 0}
     - target: {fileID: 2118072187475788718, guid: d94747d1560f1be499011784fc653c0f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -145593,6 +145601,10 @@ PrefabInstance:
     - target: {fileID: 4642140031605930812, guid: d94747d1560f1be499011784fc653c0f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146893656779045817, guid: d94747d1560f1be499011784fc653c0f, type: 3}
+      propertyPath: m_TagString
+      value: GlobalLight
       objectReference: {fileID: 0}
     - target: {fileID: 7001922801340401952, guid: d94747d1560f1be499011784fc653c0f, type: 3}
       propertyPath: m_Mesh
