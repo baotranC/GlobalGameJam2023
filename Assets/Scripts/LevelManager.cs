@@ -20,19 +20,21 @@ public class LevelManager : MonoBehaviour {
 
     [HideInInspector] private Light2D light;
     [HideInInspector] public GameObject[] desactivables;
+    [HideInInspector] public GameObject[] refNotesPrefabs;
 
 
-    public void StartLevel() {
+    public void StartLevel(GameObject[] refNotesPrefabs) {
         print("Start of " + gameObject.name);
         melodies = GetComponentsInChildren<MelodyManager>();
         concertSource = GetComponent<AudioSource>();
+        this.refNotesPrefabs = refNotesPrefabs;
 
         foreach (MelodyManager melody in melodies) {
             melody.gameObject.SetActive(false);
         }
 
         melodies[0].gameObject.SetActive(true);
-        melodies[0].Init(noteColors);
+        melodies[0].Init(noteColors, refNotesPrefabs);
     }
 
     public void GoToNextMelody() {
@@ -45,7 +47,7 @@ public class LevelManager : MonoBehaviour {
         }
 
         melodies[currentMelody].gameObject.SetActive(true);
-        melodies[currentMelody].Init(noteColors);
+        melodies[currentMelody].Init(noteColors, refNotesPrefabs);
     }
 
     public void EndLevel() {

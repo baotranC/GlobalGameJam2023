@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     LevelManager[] levels;
     public GameObject[] desactivables;
+    public GameObject[] refNotesPrefabs;
 
     int currentLevel;
 
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour {
         }
 
         levels[0].gameObject.SetActive(true);
-        levels[0].StartLevel();
+        levels[0].StartLevel(refNotesPrefabs);
     }
 
     public void GoToNextLevel() {
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour {
         }
 
         levels[currentLevel].gameObject.SetActive(true);
-        levels[currentLevel].StartLevel();
+        levels[currentLevel].StartLevel(refNotesPrefabs);
         ResetCursor();
     }
 
