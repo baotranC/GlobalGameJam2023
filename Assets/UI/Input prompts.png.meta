@@ -44,6 +44,18 @@ TextureImporter:
   - first:
       213: -2695216896266725930
     second: Input prompts_13
+  - first:
+      213: -8385203635605339682
+    second: Input prompts_14
+  - first:
+      213: -2524794141298472376
+    second: Input prompts_15
+  - first:
+      213: -1677172227951652368
+    second: Input prompts_16
+  - first:
+      213: -7826084976733852775
+    second: Input prompts_17
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -150,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 68
+        y: 85
         width: 16
         height: 16
       alignment: 0
@@ -171,7 +183,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 68
+        y: 85
         width: 16
         height: 16
       alignment: 0
@@ -192,7 +204,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 68
+        y: 85
         width: 16
         height: 16
       alignment: 0
@@ -213,7 +225,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 68
+        y: 85
         width: 16
         height: 16
       alignment: 0
@@ -234,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -255,7 +267,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -276,7 +288,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -297,7 +309,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -318,7 +330,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 51
         width: 33
         height: 16
       alignment: 0
@@ -339,7 +351,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 34
+        y: 51
         width: 33
         height: 16
       alignment: 0
@@ -360,7 +372,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
+        y: 34
         width: 33
         height: 16
       alignment: 0
@@ -381,7 +393,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 17
+        y: 34
         width: 33
         height: 16
       alignment: 0
@@ -402,7 +414,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 17
         width: 33
         height: 16
       alignment: 0
@@ -423,7 +435,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 0
+        y: 17
         width: 33
         height: 16
       alignment: 0
@@ -435,6 +447,90 @@ TextureImporter:
       bones: []
       spriteID: 6d51461438aa89ad0800000000000000
       internalID: -2695216896266725930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed10e6a58b5c1ab80800000000000000
+      internalID: -8385203635605339682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84acaecfa1126fcd0800000000000000
+      internalID: -2524794141298472376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_16
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f19ac5aebc79b8e0800000000000000
+      internalID: -1677172227951652368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99be1c39d29246390800000000000000
+      internalID: -7826084976733852775
       vertices: []
       indices: 
       edges: []
