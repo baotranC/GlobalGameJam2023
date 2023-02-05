@@ -96,10 +96,10 @@ public class MelodyManager : MonoBehaviour {
         int noteIndex = noteSpot.GetNoteIndex();
 
         if (melody[noteSpot.column] == noteIndex) {
-            print("Note is valid (" + (noteSpot.column + 1) + "/" + melody.Length + ")");
+            //print("Note is valid (" + (noteSpot.column + 1) + "/" + melody.Length + ")");
             refNotesInstancesAnimators[noteSpot.column].SetBool("Triggered", true);
         } else {
-            print("Wrong note !  (" + (noteSpot.column + 1) + "/" + melody.Length + ")");
+            //print("Wrong note !  (" + (noteSpot.column + 1) + "/" + melody.Length + ")");
             hasFailed = true;
             DisplayFailedRow(noteSpot.column);
             shake.StartShake();
