@@ -146373,6 +146373,30 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 366428634}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514633488256327715, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1527708727315094877, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -147485,6 +147509,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1878121092}
+    - target: {fileID: 4042984682886480388, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042984682886480388, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042984682886480388, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].r
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 4374584863001182127, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -147805,6 +147841,30 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1762864836}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].b
+      value: 0.8522658
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].g
+      value: 0.20932718
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257361882977221684, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[3].r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5496505877391142268, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -149108,6 +149168,18 @@ PrefabInstance:
     - target: {fileID: 8169418781142192344, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169418781565036129, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169418781565036129, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169418781565036129, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
+      propertyPath: noteColors.Array.data[2].r
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 8334081709311705328, guid: 85c540d1c55d0d24eb67ed72feef1089, type: 3}
       propertyPath: m_Mesh
