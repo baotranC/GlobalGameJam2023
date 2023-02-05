@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour {
             vignette.active = false;
         }
 
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Desactivable"))
+        foreach (GameObject go in desactivables)
         {
             go.active = false;
         };
