@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MelodyManager : MonoBehaviour {
+public class MelodyManager : MonoBehaviour
+{
 
-    public int[] melody;
-    public NoteSpot[] notesLineRef;
-    [Tooltip("Space_between_steps * 60 / bpm")]
-    public float cursorHorizontalSpeed = 2f;
-    public float cursorVerticalSpeed = 10f;
-    public bool hasDarkness;
+	public int[] melody;
+	public NoteSpot[] notesLineRef;
+	[Tooltip("Space_between_steps * 60 / bpm")]
+	public float cursorHorizontalSpeed = 2f;
+	public float cursorVerticalSpeed = 10f;
+	public bool hasDarkness;
 
     int currentNote;
     Cursor cursor;
@@ -34,31 +35,36 @@ public class MelodyManager : MonoBehaviour {
         this.noteColors = noteColors;
         this.refNotesPrefabs = refNotesPrefabs;
 
-        // Find what notes are in each column
-        notesPerColumn = new List<List<NoteSpot>>();
-        for (int i = 0; i < notesLineRef.Length; ++i) {
-            notesLineRef[i].Init(noteColors);
+		// Find what notes are in each column
+		notesPerColumn = new List<List<NoteSpot>>();
+		for (int i = 0; i < notesLineRef.Length; ++i)
+		{
+			notesLineRef[i].Init(noteColors);
 
-            List<NoteSpot> columnNotes = new List<NoteSpot>();
-            RaycastHit2D[] hits = Physics2D.RaycastAll(notesLineRef[i].transform.position, Vector2.down);
+			List<NoteSpot> columnNotes = new List<NoteSpot>();
+			RaycastHit2D[] hits = Physics2D.RaycastAll(notesLineRef[i].transform.position, Vector2.down);
 
-            foreach (RaycastHit2D hit in hits) {
-                NoteSpot noteSpot = hit.collider.gameObject.GetComponent<NoteSpot>();
-                if (noteSpot != null && noteSpot != notesLineRef[i]) {
-                    noteSpot.Init(noteColors);
-                    columnNotes.Add(noteSpot);
-                }
-            }
+			foreach (RaycastHit2D hit in hits)
+			{
+				NoteSpot noteSpot = hit.collider.gameObject.GetComponent<NoteSpot>();
+				if (noteSpot != null && noteSpot != notesLineRef[i])
+				{
+					noteSpot.Init(noteColors);
+					columnNotes.Add(noteSpot);
+				}
+			}
 
-            notesPerColumn.Add(columnNotes);
-        }
+			notesPerColumn.Add(columnNotes);
+		}
 
-        // Tell each note what column they are in
-        for (int i = 0; i < notesPerColumn.Count; ++i) {
-            foreach (NoteSpot noteSpot in notesPerColumn[i]) {
-                noteSpot.column = i;
-            }
-        }
+		// Tell each note what column they are in
+		for (int i = 0; i < notesPerColumn.Count; ++i)
+		{
+			foreach (NoteSpot noteSpot in notesPerColumn[i])
+			{
+				noteSpot.column = i;
+			}
+		}
 
         // Set right note for the reference track AND one random note in its column
         refNotesInstancesAnimators = new List<Animator>();
@@ -88,8 +94,9 @@ public class MelodyManager : MonoBehaviour {
         }
     }
 
-    public void RegisterNote(NoteSpot noteSpot) {
-        int noteIndex = noteSpot.GetNoteIndex();
+	public void RegisterNote(NoteSpot noteSpot)
+	{
+		int noteIndex = noteSpot.GetNoteIndex();
 
         if (melody[currentNote] == noteIndex) {
             //print("Note is valid (" + (currentNote + 1) + "/" + melody.Length + ")");
@@ -98,38 +105,47 @@ public class MelodyManager : MonoBehaviour {
             //print("Wrong note !  (" + (currentNote + 1) + "/" + melody.Length + ")");
             hasFailed = true;
             DisplayFailedRow(currentNote);
+			// TODO: HERE
         }
 
-        currentNote++;
+		currentNote++;
 
-        if (currentNote == melody.Length) {
-            if (hasFailed) {
-                print("Melody failed");
-            } else {
-                EndMelody();
-            }
-        }
+		if (currentNote == melody.Length)
+		{
+			if (hasFailed)
+			{
+				print("Melody failed");
+			}
+			else
+			{
+				EndMelody();
+			}
+		}
 
-        foreach (NoteSpot noteSpot1 in notesPerColumn[noteSpot.column]) {
-            noteSpot1.Hide(hideSprite: (noteSpot1 != noteSpot));
-        }
-    }
+		foreach (NoteSpot noteSpot1 in notesPerColumn[noteSpot.column])
+		{
+			noteSpot1.Hide(hideSprite: (noteSpot1 != noteSpot));
+		}
+	}
 
-    public void DisplayFailedRow(int currentNote) {
-        for (int i = 0; i < notesPerColumn[currentNote].Count; ++i) {
-            //notesPerColumn[currentNote][i].SetNoteIndex(5); // TODO: make this a constant
-            notesPerColumn[currentNote][i].sprite.color = Color.black;
-        }
-    }
+	public void DisplayFailedRow(int currentNote)
+	{
+		for (int i = 0; i < notesPerColumn[currentNote].Count; ++i)
+		{
+			//notesPerColumn[currentNote][i].SetNoteIndex(5); // TODO: make this a constant
+			notesPerColumn[currentNote][i].sprite.color = Color.black;
+		}
+	}
 
-    void EndMelody() {
-        print(gameObject.name + " succeeded !");
-        StartCoroutine(PerformEndMelody());
-    }
+	void EndMelody()
+	{
+		print(gameObject.name + " succeeded !");
+		StartCoroutine(PerformEndMelody());
+	}
 
-    IEnumerator PerformEndMelody() {
-        yield return new WaitForSeconds(1f);
-        GetComponentInParent<LevelManager>().GoToNextMelody();
-    }
-
+	IEnumerator PerformEndMelody()
+	{
+		yield return new WaitForSeconds(1f);
+		GetComponentInParent<LevelManager>().GoToNextMelody();
+	}
 }
