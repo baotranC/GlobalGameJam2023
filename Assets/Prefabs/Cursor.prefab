@@ -315,7 +315,19 @@ MonoBehaviour:
     m_ActionId: e0022ead-86bb-4f38-a507-61dfec05312d
     m_ActionName: Cursor/Play[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 595c92d0-b0db-4d81-a295-66bbd04b246d
     m_ActionName: Cursor/Reset[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
