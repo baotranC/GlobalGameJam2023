@@ -32,6 +32,18 @@ TextureImporter:
   - first:
       213: 5087179476889513576
     second: Input prompts_9
+  - first:
+      213: 7723498796449571288
+    second: Input prompts_10
+  - first:
+      213: -5700866209495649324
+    second: Input prompts_11
+  - first:
+      213: 4215873400086207456
+    second: Input prompts_12
+  - first:
+      213: -2695216896266725930
+    second: Input prompts_13
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -118,6 +130,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -126,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -147,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 34
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -168,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 34
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -189,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 34
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -210,7 +234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -231,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 17
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -252,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 17
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -273,7 +297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 17
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -294,7 +318,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 34
         width: 33
         height: 16
       alignment: 0
@@ -315,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 0
+        y: 34
         width: 33
         height: 16
       alignment: 0
@@ -327,6 +351,90 @@ TextureImporter:
       bones: []
       spriteID: 86e28acf7ca499640800000000000000
       internalID: 5087179476889513576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1a8890c316f2b60800000000000000
+      internalID: 7723498796449571288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_11
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3fbfe036472e0b0800000000000000
+      internalID: -5700866209495649324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb182e458ac18a30800000000000000
+      internalID: 4215873400086207456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input prompts_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d51461438aa89ad0800000000000000
+      internalID: -2695216896266725930
       vertices: []
       indices: 
       edges: []
