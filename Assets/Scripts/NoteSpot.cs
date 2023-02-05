@@ -76,6 +76,7 @@ public class NoteSpot : MonoBehaviour {
     public void SetNoteIndex(int value) {
         noteIndex = value;
         sprite.color = noteColors[noteIndex];
+        animator.SetBool("Error", false);
         light.color = noteColors[noteIndex];
 
     }
