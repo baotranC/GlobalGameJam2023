@@ -134,6 +134,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 18e72ad67588de540802fd6349e1cd41, type: 3}
   - {fileID: 8300000, guid: 1a07282a8752c3e4ea8011d8e69b785c, type: 3}
   - {fileID: 8300000, guid: 4ceda39801651b445af23eeaaaec069e, type: 3}
+  - {fileID: 8300000, guid: 6eaa4f58044f40d478f956fb25f13f66, type: 3}
+  isMovingVertical: 0
+  isMovingHorizontal: 0
+  speedMov: 2
+  heightMov: 0.005
+  sprite: {fileID: 0}
+  column: 0
+  reference: 0
   noteColors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.5442527, b: 0, a: 1}
@@ -141,12 +149,6 @@ MonoBehaviour:
   - {r: 0.16542071, g: 0.8773585, b: 0, a: 1}
   - {r: 0, g: 0.60645056, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
-  isMovingVertical: 0
-  isMovingHorizontal: 0
-  speedMov: 2
-  heightMov: 0.005
-  column: 0
-  reference: 0
 --- !u!61 &4316337408546450691
 BoxCollider2D:
   m_ObjectHideFlags: 0

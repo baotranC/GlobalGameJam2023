@@ -14,9 +14,10 @@ public class MelodyManager : MonoBehaviour {
     Cursor cursor;
     bool hasFailed;
     List<List<NoteSpot>> notesPerColumn;
+    [HideInInspector] public Color[] noteColors;
 
 
-    public void Init() {
+    public void Init(Color[] noteColors) {
         print("Start of" + gameObject.name);
         if (melody.Length != notesLineRef.Length) {
             throw new System.Exception("Melody " + gameObject.name +
@@ -26,11 +27,12 @@ public class MelodyManager : MonoBehaviour {
         cursor = FindObjectOfType<Cursor>();
         cursor.horizontalSpeed = cursorHorizontalSpeed;
         cursor.verticalSpeed = cursorVerticalSpeed;
+        this.noteColors = noteColors;
 
         // Find what notes are in each column
         notesPerColumn = new List<List<NoteSpot>>();
         for (int i = 0; i < notesLineRef.Length; ++i) {
-            notesLineRef[i].Init();
+            notesLineRef[i].Init(noteColors);
 
             List<NoteSpot> columnNotes = new List<NoteSpot>();
             RaycastHit2D[] hits = Physics2D.RaycastAll(notesLineRef[i].transform.position, Vector2.down);
@@ -38,7 +40,7 @@ public class MelodyManager : MonoBehaviour {
             foreach (RaycastHit2D hit in hits) {
                 NoteSpot noteSpot = hit.collider.gameObject.GetComponent<NoteSpot>();
                 if (noteSpot != null && noteSpot != notesLineRef[i]) {
-                    noteSpot.Init();
+                    noteSpot.Init(noteColors);
                     columnNotes.Add(noteSpot);
                 }
             }

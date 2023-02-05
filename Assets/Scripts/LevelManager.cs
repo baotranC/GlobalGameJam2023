@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
     public AudioClip concertAudio;
+    [SerializeField] private Color[] noteColors;
 
     MelodyManager[] melodies;
     int currentMelody;
@@ -20,7 +21,7 @@ public class LevelManager : MonoBehaviour {
         }
 
         melodies[0].gameObject.SetActive(true);
-        melodies[0].Init();
+        melodies[0].Init(noteColors);
     }
 
     public void GoToNextMelody() {
@@ -33,7 +34,7 @@ public class LevelManager : MonoBehaviour {
         }
 
         melodies[currentMelody].gameObject.SetActive(true);
-        melodies[currentMelody].Init();
+        melodies[currentMelody].Init(noteColors);
     }
 
     public void EndLevel() {

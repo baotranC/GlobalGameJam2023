@@ -5,7 +5,6 @@ using UnityEngine;
 public class NoteSpot : MonoBehaviour {
 
     [SerializeField] private AudioClip[] notes;
-    [SerializeField] private Color[] noteColors;
 
     [SerializeField] private bool isMovingVertical;
     [SerializeField] private bool isMovingHorizontal;
@@ -20,12 +19,15 @@ public class NoteSpot : MonoBehaviour {
     Vector3 initalPos;
     [HideInInspector] public int column;
     [HideInInspector] public bool reference;
-    public void Init() {
+    [HideInInspector] public Color[] noteColors;
+
+    public void Init(Color[] noteColors) {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         melodyManager = FindObjectOfType<MelodyManager>();
+        this.noteColors = noteColors;
 
-        SetNoteIndex(Random.Range(0, notes.Length));
+        SetNoteIndex(Random.Range(0, noteColors.Length));
         initalPos = transform.position;
     }
 
@@ -60,6 +62,7 @@ public class NoteSpot : MonoBehaviour {
 
     public void SetNoteIndex(int value) {
         noteIndex = value;
+        print(noteColors.Length.ToString() + " " + noteIndex.ToString());
         sprite.color = noteColors[noteIndex];
     }
 
