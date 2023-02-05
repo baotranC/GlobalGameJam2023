@@ -232,7 +232,7 @@ MonoBehaviour:
   isMovingVertical: 0
   isMovingHorizontal: 0
   speedMov: 2
-  heightMov: 0.005
+  heightMov: 0.5
   sprite: {fileID: 0}
   animator: {fileID: 0}
   light: {fileID: 0}
