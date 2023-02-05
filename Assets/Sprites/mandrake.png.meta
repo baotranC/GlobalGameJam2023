@@ -59,6 +59,27 @@ TextureImporter:
   - first:
       213: -6142551895490276934
     second: mandrake_18
+  - first:
+      213: -6637648664724885066
+    second: mandrake_19
+  - first:
+      213: -9218036924308194967
+    second: mandrake_20
+  - first:
+      213: 6669427658812077436
+    second: mandrake_21
+  - first:
+      213: -3816210865090888085
+    second: mandrake_22
+  - first:
+      213: 9141224353403045363
+    second: mandrake_23
+  - first:
+      213: 9037359544814442359
+    second: mandrake_24
+  - first:
+      213: -630347552868139410
+    second: mandrake_25
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -165,7 +186,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -186,7 +207,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -207,7 +228,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -228,7 +249,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 87
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -249,7 +270,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 116
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -270,7 +291,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 145
-        y: 54
+        y: 81
         width: 29
         height: 27
       alignment: 0
@@ -291,7 +312,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
+        y: 54
         width: 29
         height: 27
       alignment: 0
@@ -312,7 +333,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 27
+        y: 54
         width: 29
         height: 27
       alignment: 0
@@ -333,7 +354,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 27
+        y: 54
         width: 29
         height: 27
       alignment: 0
@@ -354,7 +375,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 87
-        y: 27
+        y: 54
         width: 29
         height: 27
       alignment: 0
@@ -375,7 +396,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 116
-        y: 27
+        y: 54
         width: 29
         height: 27
       alignment: 0
@@ -396,7 +417,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -417,7 +438,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -438,7 +459,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -459,7 +480,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 87
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -480,7 +501,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 116
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -501,7 +522,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 145
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -522,7 +543,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 174
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -543,7 +564,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 203
-        y: 0
+        y: 27
         width: 29
         height: 27
       alignment: 0
@@ -555,6 +576,153 @@ TextureImporter:
       bones: []
       spriteID: ab156ee789541caa0800000000000000
       internalID: -6142551895490276934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b13a3b05b552e3a0800000000000000
+      internalID: -6637648664724885066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_20
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969fc20b144f21080800000000000000
+      internalID: -9218036924308194967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_21
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75b8aa9e119e8c50800000000000000
+      internalID: 6669427658812077436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_22
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e7546ff681a0bc0800000000000000
+      internalID: -3816210865090888085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_23
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f50dbcfd172cde70800000000000000
+      internalID: 9141224353403045363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_24
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7779620cf962b6d70800000000000000
+      internalID: 9037359544814442359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mandrake_25
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ef14a8d3e8047f0800000000000000
+      internalID: -630347552868139410
       vertices: []
       indices: 
       edges: []
