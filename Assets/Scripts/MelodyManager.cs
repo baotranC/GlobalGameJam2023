@@ -9,6 +9,7 @@ public class MelodyManager : MonoBehaviour {
     [Tooltip("Space_between_steps * 60 / bpm")]
     public float cursorHorizontalSpeed = 2f;
     public float cursorVerticalSpeed = 10f;
+    public bool hasDarkness;
 
     int currentNote;
     Cursor cursor;
@@ -27,6 +28,7 @@ public class MelodyManager : MonoBehaviour {
         cursor = FindObjectOfType<Cursor>();
         cursor.horizontalSpeed = cursorHorizontalSpeed;
         cursor.verticalSpeed = cursorVerticalSpeed;
+        cursor.SetDarkness(hasDarkness);
         this.noteColors = noteColors;
 
         // Find what notes are in each column

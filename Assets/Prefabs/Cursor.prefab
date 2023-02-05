@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e003b2a7ea0a26f4186974be930eb124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  darkness:
+  - {fileID: 4549986133601424009}
+  - {fileID: 4549986134526160339}
   horizontalSpeed: 2
   verticalSpeed: 10
 --- !u!61 &4549986134165322340
@@ -237,6 +240,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e0022ead-86bb-4f38-a507-61dfec05312d
     m_ActionName: Cursor/Play[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 68af42eb-541b-4f09-9b8e-fe9156cbb36a
+    m_ActionName: Cursor/Move2[/Keyboard/downArrow,/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Cursor
