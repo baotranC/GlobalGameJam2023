@@ -13,6 +13,8 @@ public class NoteSpot : MonoBehaviour {
 
     private AudioSource source;
     [HideInInspector] public SpriteRenderer sprite;
+    [HideInInspector] public Animator animator;
+
     private MelodyManager melodyManager;
     int noteIndex;
     bool isHidden;
@@ -24,6 +26,8 @@ public class NoteSpot : MonoBehaviour {
     public void Init(Color[] noteColors) {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+
         melodyManager = FindObjectOfType<MelodyManager>();
         this.noteColors = noteColors;
 
@@ -34,6 +38,7 @@ public class NoteSpot : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (!isHidden && collision.CompareTag("Cursor")) {
             Play();
+            animator.SetBool("Interacted",true);
             melodyManager.RegisterNote(this);
         }
     }
@@ -55,7 +60,9 @@ public class NoteSpot : MonoBehaviour {
     public void Show() {
         Color normalColor = sprite.color;
         normalColor.a = 1f;
-        sprite.color = normalColor;
+        sprite.material.SetColor("OverlayCol",normalColor);
+        animator.SetBool("Interacted", false);
+
         isHidden = false;
         SetNoteIndex(noteIndex);
     }
