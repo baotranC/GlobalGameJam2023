@@ -15,15 +15,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move2",
-                    "type": "PassThrough",
-                    "id": "68af42eb-541b-4f09-9b8e-fe9156cbb36a",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Play",
                     "type": "Button",
                     "id": "e0022ead-86bb-4f38-a507-61dfec05312d",
@@ -80,34 +71,34 @@
                 },
                 {
                     "name": "Arrows",
-                    "id": "aaad5c87-f2ae-4cc2-8663-40980568f76e",
+                    "id": "097ba5ae-666c-411d-b5e1-a0377dd18bfd",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move2",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
-                    "id": "965b6920-f84c-41d0-8918-78956e5ba36c",
+                    "id": "b2530e77-3563-4a6a-bfdb-507bf2ff3539",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move2",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
-                    "id": "1561b91d-2a60-41bd-8d67-26014b1abc92",
+                    "id": "8b7fcd5c-b1f1-4cd3-8f7e-be328911351b",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move2",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
