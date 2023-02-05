@@ -11,11 +11,9 @@ public class Cursor : MonoBehaviour {
     Rigidbody2D rb;
     float moveInput;
     Vector3 initialPos;
-    GameManager gameManager;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
-        gameManager = FindObjectOfType<GameManager>();
         initialPos = transform.position;
     }
 
