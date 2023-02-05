@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 
+using UnityEngine.SceneManagement;
+
+
 public class GameManager : MonoBehaviour {
 
     LevelManager[] levels;
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
     void GoToEnding() {
         print("Last level complete, go to ending of the game");
+        SceneManager.LoadScene(0);
     }
 
     public void ResetCursor() {
