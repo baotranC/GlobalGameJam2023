@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class NoteSpot : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class NoteSpot : MonoBehaviour {
     private AudioSource source;
     [HideInInspector] public SpriteRenderer sprite;
     [HideInInspector] public Animator animator;
+    [HideInInspector] public Light2D light;
 
     private MelodyManager melodyManager;
     int noteIndex;
@@ -26,6 +28,7 @@ public class NoteSpot : MonoBehaviour {
     public void Init(Color[] noteColors) {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        light = GetComponentInChildren<Light2D>();
         animator = GetComponentInChildren<Animator>();
 
         melodyManager = FindObjectOfType<MelodyManager>();
@@ -61,6 +64,7 @@ public class NoteSpot : MonoBehaviour {
         Color normalColor = sprite.color;
         normalColor.a = 1f;
         sprite.material.SetColor("OverlayCol",normalColor);
+        light.color = normalColor;
         animator.SetBool("Interacted", false);
 
         isHidden = false;
@@ -70,6 +74,8 @@ public class NoteSpot : MonoBehaviour {
     public void SetNoteIndex(int value) {
         noteIndex = value;
         sprite.color = noteColors[noteIndex];
+        light.color = noteColors[noteIndex];
+
     }
 
     public int GetNoteIndex() {
