@@ -14,7 +14,9 @@ public class NoteSpot : MonoBehaviour {
 
     private AudioSource source;
     [HideInInspector] public SpriteRenderer sprite;
-    [HideInInspector] public Animator animator;
+    public Animator animator;
+    public Animator forceAnimator;
+
     [HideInInspector] public Light2D light;
 
     private MelodyManager melodyManager;
@@ -30,7 +32,6 @@ public class NoteSpot : MonoBehaviour {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         light = GetComponentInChildren<Light2D>();
-        animator = GetComponentInChildren<Animator>();
 
         melodyManager = FindObjectOfType<MelodyManager>();
         this.noteColors = noteColors;
@@ -77,6 +78,8 @@ public class NoteSpot : MonoBehaviour {
         noteIndex = value;
         sprite.color = noteColors[noteIndex];
         animator.SetBool("Error", false);
+        forceAnimator.SetBool("LastNote", false);
+
         light.color = noteColors[noteIndex];
 
     }

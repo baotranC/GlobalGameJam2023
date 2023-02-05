@@ -111,6 +111,7 @@ public class MelodyManager : MonoBehaviour {
             if (hasFailed || currentNote != noteSpot.column + 1) {
                 print("Melody failed");
             } else {
+                noteSpot.forceAnimator.SetBool("LastNote",true);
                 EndMelody();
             }
         }
