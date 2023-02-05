@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 3628107656693210919}
   - component: {fileID: 3628107656693210918}
   - component: {fileID: 3628107656693210913}
+  - component: {fileID: 4892115890263930532}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -227,6 +228,53 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &4892115890263930532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628107656693210917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fc68a3ca2e2cc43903a8a6a6d2ab32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  duration: 0.8
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0056610107
+      value: -0.047958374
+      inSlope: 0.17236613
+      outSlope: 0.17236613
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.20188572
+      value: -0.014135882
+      inSlope: -0.11934679
+      outSlope: -0.11934679
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1071443
+    - serializedVersion: 3
+      time: 0.99432373
+      value: -0.048534393
+      inSlope: -0.043408457
+      outSlope: -0.043408457
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5675154037037496875
 GameObject:
   m_ObjectHideFlags: 0

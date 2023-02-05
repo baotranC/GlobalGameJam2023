@@ -12,28 +12,32 @@ public class MelodyManager : MonoBehaviour
 	public float cursorVerticalSpeed = 10f;
 	public bool hasDarkness;
 
-    int currentNote;
-    Cursor cursor;
-    bool hasFailed;
-    List<List<NoteSpot>> notesPerColumn;
-    [HideInInspector] public Color[] noteColors;
-    [HideInInspector] public GameObject[] refNotesPrefabs;
-    List<Animator> refNotesInstancesAnimators;
+	int currentNote;
+	Cursor cursor;
+	bool hasFailed;
+	List<List<NoteSpot>> notesPerColumn;
+	[HideInInspector] public Color[] noteColors;
+	[HideInInspector] public GameObject[] refNotesPrefabs;
+	List<Animator> refNotesInstancesAnimators;
+	private ShakeController shake;
 
+	public void Init(Color[] noteColors, GameObject[] refNotesPrefabs)
+	{
+		shake = FindObjectOfType<ShakeController>();
 
-    public void Init(Color[] noteColors, GameObject[] refNotesPrefabs) {
-        print("Start of" + gameObject.name);
-        if (melody.Length != notesLineRef.Length) {
-            throw new System.Exception("Melody " + gameObject.name +
-                " has different numbers of notes in its melody (" + melody.Length.ToString() +
-                ") and its reference line (" + notesLineRef.Length + ")");
-        }
-        cursor = FindObjectOfType<Cursor>();
-        cursor.horizontalSpeed = cursorHorizontalSpeed;
-        cursor.verticalSpeed = cursorVerticalSpeed;
-        cursor.SetDarkness(hasDarkness);
-        this.noteColors = noteColors;
-        this.refNotesPrefabs = refNotesPrefabs;
+		print("Start of" + gameObject.name);
+		if (melody.Length != notesLineRef.Length)
+		{
+			throw new System.Exception("Melody " + gameObject.name +
+				" has different numbers of notes in its melody (" + melody.Length.ToString() +
+				") and its reference line (" + notesLineRef.Length + ")");
+		}
+		cursor = FindObjectOfType<Cursor>();
+		cursor.horizontalSpeed = cursorHorizontalSpeed;
+		cursor.verticalSpeed = cursorVerticalSpeed;
+		cursor.SetDarkness(hasDarkness);
+		this.noteColors = noteColors;
+		this.refNotesPrefabs = refNotesPrefabs;
 
 		// Find what notes are in each column
 		notesPerColumn = new List<List<NoteSpot>>();
@@ -66,47 +70,54 @@ public class MelodyManager : MonoBehaviour
 			}
 		}
 
-        // Set right note for the reference track AND one random note in its column
-        refNotesInstancesAnimators = new List<Animator>();
-        for (int i = 0; i < melody.Length; ++i) {
-            int randomIndex = Random.Range(0, notesPerColumn[i].Count);
-            // Random note in column
-            notesPerColumn[i][randomIndex].SetNoteIndex(melody[i]);
+		// Set right note for the reference track AND one random note in its column
+		refNotesInstancesAnimators = new List<Animator>();
+		for (int i = 0; i < melody.Length; ++i)
+		{
+			int randomIndex = Random.Range(0, notesPerColumn[i].Count);
+			// Random note in column
+			notesPerColumn[i][randomIndex].SetNoteIndex(melody[i]);
 
-            // Reference track
-            notesLineRef[i].SetNoteIndex(melody[i]);
-            notesLineRef[i].reference = true;
-            notesLineRef[i].sprite.enabled = false;
-            Animator refNoteAnimator = Instantiate(refNotesPrefabs[melody[i]], notesLineRef[i].transform).GetComponent<Animator>();
-            refNotesInstancesAnimators.Add(refNoteAnimator);
-        }
-    }
+			// Reference track
+			notesLineRef[i].SetNoteIndex(melody[i]);
+			notesLineRef[i].reference = true;
+			notesLineRef[i].sprite.enabled = false;
+			Animator refNoteAnimator = Instantiate(refNotesPrefabs[melody[i]], notesLineRef[i].transform).GetComponent<Animator>();
+			refNotesInstancesAnimators.Add(refNoteAnimator);
+		}
+	}
 
-    public void ResetCursor() {
-        cursor.Reset();
-        hasFailed = false;
-        currentNote = 0;
-        for (int i = 0; i < notesPerColumn.Count; ++i) {
-            foreach (NoteSpot noteSpot in notesPerColumn[i]) {
-                noteSpot.Show();
-            }
-            refNotesInstancesAnimators[i].SetBool("Triggered", false);
-        }
-    }
+	public void ResetCursor()
+	{
+		cursor.Reset();
+		hasFailed = false;
+		currentNote = 0;
+		for (int i = 0; i < notesPerColumn.Count; ++i)
+		{
+			foreach (NoteSpot noteSpot in notesPerColumn[i])
+			{
+				noteSpot.Show();
+			}
+			refNotesInstancesAnimators[i].SetBool("Triggered", false);
+		}
+	}
 
 	public void RegisterNote(NoteSpot noteSpot)
 	{
 		int noteIndex = noteSpot.GetNoteIndex();
 
-        if (melody[currentNote] == noteIndex) {
-            //print("Note is valid (" + (currentNote + 1) + "/" + melody.Length + ")");
-            refNotesInstancesAnimators[noteSpot.column].SetBool("Triggered", true);
-        } else {
-            //print("Wrong note !  (" + (currentNote + 1) + "/" + melody.Length + ")");
-            hasFailed = true;
-            DisplayFailedRow(currentNote);
-			// TODO: HERE
-        }
+		if (melody[currentNote] == noteIndex)
+		{
+			//print("Note is valid (" + (currentNote + 1) + "/" + melody.Length + ")");
+			refNotesInstancesAnimators[noteSpot.column].SetBool("Triggered", true);
+		}
+		else
+		{
+			//print("Wrong note !  (" + (currentNote + 1) + "/" + melody.Length + ")");
+			hasFailed = true;
+			DisplayFailedRow(currentNote);
+			shake.StartShake();
+		}
 
 		currentNote++;
 
@@ -132,7 +143,6 @@ public class MelodyManager : MonoBehaviour
 	{
 		for (int i = 0; i < notesPerColumn[currentNote].Count; ++i)
 		{
-			//notesPerColumn[currentNote][i].SetNoteIndex(5); // TODO: make this a constant
 			notesPerColumn[currentNote][i].sprite.color = Color.black;
 		}
 	}
