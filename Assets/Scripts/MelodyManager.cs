@@ -10,6 +10,8 @@ public class MelodyManager : MonoBehaviour {
     public float cursorHorizontalSpeed = 2f;
     public float cursorVerticalSpeed = 10f;
     public bool hasDarkness;
+    [SerializeField] private AudioClip[] errorSounds;
+    [SerializeField] private AudioSource errorSource;
 
     int currentNote;
     Cursor cursor;
@@ -103,6 +105,7 @@ public class MelodyManager : MonoBehaviour {
             hasFailed = true;
             DisplayFailedRow(noteSpot.column);
             shake.StartShake();
+            soundManager.PlaySound(errorSource, errorSounds, randomPitch: true, createTempSource: true);
         }
 
         currentNote++;
