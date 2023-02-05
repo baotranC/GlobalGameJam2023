@@ -69,7 +69,6 @@ public class NoteSpot : MonoBehaviour {
 
     public void SetNoteIndex(int value) {
         noteIndex = value;
-        print(noteColors.Length.ToString() + " " + noteIndex.ToString());
         sprite.color = noteColors[noteIndex];
     }
 
