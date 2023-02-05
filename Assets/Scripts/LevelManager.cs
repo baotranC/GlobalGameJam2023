@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour {
         concertSource.Play();
         // TODO setup all effects
 
-        yield return new WaitForSeconds(concertAudio.length + 1f);
+        yield return new WaitForSeconds(concertAudio.length );
 
         director.Play();
 

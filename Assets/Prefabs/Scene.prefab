@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 2118072188560531868}
   - component: {fileID: 2269399232413340715}
   - component: {fileID: 1057639341}
+  - component: {fileID: 6367891981655749824}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -352,7 +353,7 @@ MonoBehaviour:
   - {x: -18.894714, y: -4.496165, z: 0}
   m_ShapePathHash: -440381447
   m_Mesh: {fileID: 0}
-  m_InstanceId: 645614
+  m_InstanceId: 651534
 --- !u!320 &1057639341
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -376,6 +377,102 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!82 &6367891981655749824
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118072188560531867}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5146893656779045817
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +714,9 @@ PlayableDirector:
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -8079101082646138886, guid: 91d1ec8901d14d44e9b06725c2c38670, type: 2}
+    value: {fileID: 6367891981655749824}
   m_ExposedReferences:
     m_References:
     - fdeda3db67af6d043a0da927e706424a: {fileID: 4033897671979551613}
@@ -629,6 +728,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2118072188560531868}
     m_Modifications:
+    - target: {fileID: 2769390761703828220, guid: 3a7c2996854f9c14db50f83d2675f5fe, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769390761703828220, guid: 3a7c2996854f9c14db50f83d2675f5fe, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: -1229059699380781740, guid: 5357a4f4baf47f446811f26e871703e0, type: 2}
+    - target: {fileID: 2769390761703828220, guid: 3a7c2996854f9c14db50f83d2675f5fe, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 6367891981655749824}
     - target: {fileID: 3417041132686644046, guid: 3a7c2996854f9c14db50f83d2675f5fe, type: 3}
       propertyPath: m_Name
       value: ridoquiseferme
