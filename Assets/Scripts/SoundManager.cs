@@ -17,8 +17,8 @@ public class SoundManager : MonoBehaviour {
     }
 
     void Start() {
-        SetMusicVolume(musicVol);
-        SetSFXVolume(SFXVol);
+        //SetMusicVolume(musicVol);
+        //SetSFXVolume(SFXVol);
     }
 
     public void PlaySound(AudioSource source, bool randomPitch=false, bool createTempSourceIfBusy=true, bool createTempSource = false, float delay = 0f) {

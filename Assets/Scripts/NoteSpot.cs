@@ -24,8 +24,9 @@ public class NoteSpot : MonoBehaviour {
     [HideInInspector] public int column;
     [HideInInspector] public bool reference;
     [HideInInspector] public Color[] noteColors;
+    SoundManager soundManager;
 
-    public void Init(Color[] noteColors) {
+    public void Init(Color[] noteColors, SoundManager soundManager) {
         source = GetComponent<AudioSource>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         light = GetComponentInChildren<Light2D>();
@@ -33,6 +34,7 @@ public class NoteSpot : MonoBehaviour {
 
         melodyManager = FindObjectOfType<MelodyManager>();
         this.noteColors = noteColors;
+        this.soundManager = soundManager;
 
         SetNoteIndex(Random.Range(0, noteColors.Length));
         initalPos = transform.position;
@@ -48,7 +50,7 @@ public class NoteSpot : MonoBehaviour {
 
     void Play() {
         source.clip = notes[noteIndex];
-        source.Play();
+        soundManager.PlaySound(source, createTempSource: true);
     }
 
     public void Hide(bool hideSprite) {

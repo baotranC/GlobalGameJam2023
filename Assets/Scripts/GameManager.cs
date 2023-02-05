@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour {
     public GameObject[] refNotesPrefabs;
     public PlayableDirector currentDirector;
     int currentLevel;
+    SoundManager soundManager;
 
     private void Awake() {
         levels = GetComponentsInChildren<LevelManager>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         foreach(LevelManager level in levels) {
             level.gameObject.SetActive(false);
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour {
         }
 
         levels[0].gameObject.SetActive(true);
-        levels[0].StartLevel(refNotesPrefabs);
+        levels[0].StartLevel(refNotesPrefabs, soundManager);
     }
 
     public void GoToNextLevel() {
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour {
         }
 
         levels[currentLevel].gameObject.SetActive(true);
-        levels[currentLevel].StartLevel(refNotesPrefabs);
+        levels[currentLevel].StartLevel(refNotesPrefabs, soundManager);
         ResetCursor();
     }
 
