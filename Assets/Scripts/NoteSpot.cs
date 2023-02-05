@@ -84,18 +84,17 @@ public class NoteSpot : MonoBehaviour {
 
     private void Update() {
         if (!reference) {
-            Vector3 pos = transform.position;
             float newY = initalPos.y;
             float newX = initalPos.x;
 
             if (isMovingVertical) {
-                newY = (Mathf.Sin(Time.time * speedMov) * heightMov) + pos.y;
+                newY += (Mathf.Sin(Time.time * speedMov) * heightMov);
             }
             if (isMovingHorizontal) {
-                newX = (Mathf.Sin(Time.time * speedMov) * heightMov) + pos.x;
+                newX += (Mathf.Sin(Time.time * speedMov) * heightMov);
             }
 
-            transform.position = new Vector3(newX, newY, pos.z);
+            transform.position = new Vector3(newX, newY, transform.position.z);
         }
     }
 
