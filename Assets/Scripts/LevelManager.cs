@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour {
 
         foreach (GameObject go in desactivables) 
         {
-            go.active = true;
+            go.active = !go.active;
         };
         // Play concert music
         if (profile.TryGet<ChromaticAberration>(out aberration)) 
@@ -111,7 +111,7 @@ public class LevelManager : MonoBehaviour {
 
         foreach (GameObject go in desactivables)
         {
-            go.active = false;
+            go.active = !go.active;
         };
         // TODO remove all effects
         GetComponentInParent<GameManager>().GoToNextLevel();
