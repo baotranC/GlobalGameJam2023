@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3699337074099245620}
   - component: {fileID: 3699337074099245621}
+  - component: {fileID: 3090974785123501473}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ca5f3cfde41d9554aafa51752a53173f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55cf8987004e6214993f8de073822cc4, type: 3}
+  m_Sprite: {fileID: 7150230853980667685, guid: 29358ab78f8a9c74695bf139e5d3c29f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3090974785123501473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699337074099245623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8149d17d37cdfe443aa46e3e3dfeb20c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3699337075273316381
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,16 +155,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1a07282a8752c3e4ea8011d8e69b785c, type: 3}
   - {fileID: 8300000, guid: 4ceda39801651b445af23eeaaaec069e, type: 3}
   noteColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.5442527, b: 0, a: 1}
-  - {r: 1, g: 0.8454825, b: 0, a: 1}
-  - {r: 0.16542071, g: 0.8773585, b: 0, a: 1}
-  - {r: 0, g: 0.60645056, b: 1, a: 1}
+  - {r: 0.7058824, g: 0.32156864, b: 0.32156864, a: 1}
+  - {r: 0.8117647, g: 0.5411765, b: 0.79607844, a: 1}
+  - {r: 0.88235295, g: 0.7921569, b: 0.34509805, a: 1}
+  - {r: 0.5411765, g: 0.6901961, b: 0.3764706, a: 1}
+  - {r: 0.29411766, g: 0.5019608, b: 0.7921569, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   isMovingVertical: 0
   isMovingHorizontal: 0
   speedMov: 2
   heightMov: 0.005
+  sprite: {fileID: 0}
+  animator: {fileID: 0}
   column: 0
   reference: 0
 --- !u!61 &4316337408546450691
