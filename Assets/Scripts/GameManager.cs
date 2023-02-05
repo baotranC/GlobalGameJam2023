@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour {
 
     LevelManager[] levels;
     public GameObject[] desactivables;
     public GameObject[] refNotesPrefabs;
-
+    public PlayableDirector currentDirector;
     int currentLevel;
 
     private void Awake() {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
         foreach(LevelManager level in levels) {
             level.gameObject.SetActive(false);
             level.desactivables = this.desactivables;
+            level.director = currentDirector;
         }
 
         levels[0].gameObject.SetActive(true);

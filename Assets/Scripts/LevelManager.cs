@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Playables;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -21,6 +22,7 @@ public class LevelManager : MonoBehaviour {
     [HideInInspector] private Light2D light;
     [HideInInspector] public GameObject[] desactivables;
     [HideInInspector] public GameObject[] refNotesPrefabs;
+    public PlayableDirector director;
 
 
     public void StartLevel(GameObject[] refNotesPrefabs) {
@@ -60,11 +62,14 @@ public class LevelManager : MonoBehaviour {
         // TODO change to custom notes from all screens
         melodies[currentMelody - 1].gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
 
         light = GameObject.FindGameObjectsWithTag("GlobalLight")[0].GetComponent<Light2D>();
 
-        foreach(GameObject go in desactivables) 
+        director.Play();
+
+        yield return new WaitForSeconds(2.3f);
+
+        foreach (GameObject go in desactivables) 
         {
             go.active = true;
         };
@@ -78,11 +83,19 @@ public class LevelManager : MonoBehaviour {
             vignette.active = true;
         }
         light.intensity = .2f;
+
+        yield return new WaitForSeconds(1f);
+
+
         concertSource.clip = concertAudio;
         concertSource.Play();
         // TODO setup all effects
 
         yield return new WaitForSeconds(concertAudio.length + 1f);
+
+        director.Play();
+
+        yield return new WaitForSeconds(2.3f);
 
         light.intensity = .8f;
         if (profile.TryGet<ChromaticAberration>(out aberration))
