@@ -43,15 +43,20 @@ public class LevelManager : MonoBehaviour {
     }
 
     IEnumerator PerformEndLevel() {
+        // Re-display notes from the last melody
+        // TODO change to custom notes from all screens
         melodies[currentMelody - 1].gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
+        // Play concert music
         concertSource.clip = concertAudio;
         concertSource.Play();
+        // TODO setup all effects
 
         yield return new WaitForSeconds(concertAudio.length + 1f);
 
+        // TODO remove all effects
         GetComponentInParent<GameManager>().GoToNextLevel();
     }
 
